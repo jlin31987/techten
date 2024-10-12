@@ -1,0 +1,12 @@
+{
+  "name": "password-generator",
+  "version": "0.0.1",
+  "description": "Password manager application with password generation and saving functionality",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^27.0.0"
+  }
+}
