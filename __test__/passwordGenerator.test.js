@@ -14,7 +14,7 @@ describe('Password Generator', () => {
 
     test('should include lowercase letters when selected', () => {
         const password = generatePassword(10, 'false', 'true', 'false', 'false');
-        expect(/a-z/].test(password)).toBe(true);
+        expect(/[a-z]/.test(password)).toBe(true);
     });
 
     test('should include numbers when selected', () => {
@@ -24,6 +24,6 @@ describe('Password Generator', () => {
 
     test('should include symbols when selected', () => {
         const password = generatePassword(10, 'false', 'false', 'false', 'true');
-        expect(/[!@#$%^&*()-_=+[]{}<>?]/).test(password)).toBe(true);
+        expect(/[!@#$%^&*()-_=+[]{}<>?]/.test(password)).toBe(true);
     });
 });
