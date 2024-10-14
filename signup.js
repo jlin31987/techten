@@ -1,13 +1,17 @@
-const { savePassword } = require('../savePassword');
+function signUp(username, email, password, confirmPassword) {
+    // Validate email format (basic example)
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        return { success: false, message: 'Invalid email format' };
+    }
 
-describe('Save Password', () => {
-    test('should successfully save the password', () => {
-        const result = savePassword('example.com', 'password123');
-        expect(result).toBe(true);
-    });
+    // Check if passwords match
+    if (password !== confirmPassword) {
+        return { success: false, message: 'Passwords do not match' };
+    }
 
-    test('should fail to save if website name is empty', () => {
-        const result = savePassword('', 'password123');
-        expect(result).toBe(false);
-    });
-});
+    // If everything is fine, return success
+    return { success: true, message: 'User registered successfully' };
+}
+
+module.exports = { signUp };
