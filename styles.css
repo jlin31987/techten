@@ -1,0 +1,494 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dae3e5;
+}
+
+.header {
+    background-color: #001233;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 30px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.form {
+    background-color: whitesmoke;
+    color: white;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.form h2 {
+    color: #001233;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.form label {
+    color: #001233;
+    font-size: 14px;
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2; 
+    border: 1px solid #333;
+    color: #333;  
+    border-radius: 5px;
+}
+
+.form input::placeholder {
+    color: #b2b2b2;
+}
+
+.form input:focus {
+    outline: none;
+    border-color: #bbd1ea;
+}
+
+.submit-btn {
+    background-color: #bbd1ea;
+    color: #0c1120;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #507dbc;
+}
+
+.form a {
+    color: #12192f;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.form a:hover {
+    text-decoration: underline;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dae3e5;
+}
+
+.header {
+    background-color: #001233;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header div {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 30px;
+}
+
+.login-link a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.smiley {
+    font-size: 24px;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar li {
+    background-color: transparent; /*no background*/
+    margin: 0 5px;
+    padding: 10px 20px;
+
+    cursor: pointer;
+    font-size: 16px;
+    color: #333; /*text color for tab*/
+
+    border: none;
+    border-bottom: 2.5px solid transparent;
+}
+
+.underline {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.password-generator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#generatedPassword {
+    width: 400px;
+    height: 50px;
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.slider-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+#passwordLength {
+    width: 85%;
+}
+
+#lengthDisplay {
+    width: 12%;
+    font-size: 18px;
+}
+
+.checkboxes {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px 100px;
+    padding: 10px 20px;
+}
+.checkboxes label {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+input[type="checkbox"] {
+    position: relative;
+    transform: scale(135%);
+    margin-right: 5px;
+    accent-color:#e0527f;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #f2f2f2;
+    border: 2px solid #333;
+    cursor: pointer;
+    
+}
+
+button:hover {
+    background-color: #ccc;
+}
+.password-table {
+    margin: 20px auto;
+    width: 80%;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    font-size: 20px;
+    background-color: #dcdcdc;
+    color: #001233;
+}
+
+tbody td {
+    padding: 15px;
+    font-size: 18px;
+}
+
+tbody td input[type="password"] {
+    width: 100%;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    text-align: left;
+}
+
+tbody td button.copy-btn {
+    background-color: #f2f2f2;
+    border: 1px solid #333;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+tbody td button.copy-btn:hover {
+    background-color: #ccc;
+}
+
+#showPassword {
+    cursor: pointer;
+}
+.input-container {
+    display: flex;
+    width: 100%;
+    align-items: center; 
+    margin-top: 20px; 
+
+}
+
+#generatedPassword {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    padding: 10px;
+    margin-right: 10px; 
+}
+
+#copyBtn {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    border: 1px solid transparent;
+    transition: background-image 0.5s ease, border-color 0.5s ease;
+
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+
+    font-weight: 700;
+    text-align: center;
+    padding: 17px 48px;
+    margin: 0px 10px;
+    color: #fff;
+    height: 48px;
+    background-image: linear-gradient(to right,#e052a0,#f15c41);
+    z-index: 2; 
+    margin-top: -20px;
+}
+#copyBtn:hover {
+    background-image: linear-gradient(to right,#f163b1,#ff6b51);
+}
+
+#copyBtn.checkmark {
+    background-image: linear-gradient(to right,#3adc42, #5bc247);
+    color: white;
+}
+
+.styled-input {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.styled-button {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    border: 1px solid transparent;
+    transition: background-image 0.5s ease, border-color 0.5s ease;
+
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+
+    font-weight: 700;
+    text-align: center;
+    padding: 17px 48px;
+    margin: 0px 10px;
+    color: #fff;
+    height: 48px;
+    background-image: linear-gradient(to right,#e052a0,#f15c41);
+    z-index: 2; 
+}
+
+.styled-button:hover {
+    background-image: linear-gradient(to right,#f163b1,#ff6b51);
+}
+.styled-button:active {
+    background-image: linear-gradient(to right,#cf408f,#e04b31);
+}
+
+.save-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.save-password-btn {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    border: 1px solid transparent;
+    transition: background-image 0.5s ease, border-color 0.5s ease;
+
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+
+    font-weight: 700;
+    text-align: center;
+    padding: 17px 48px;
+    margin: 0px 10px;
+    color: #fff;
+    height: 48px;
+    background-image: linear-gradient(to right,#e052a0,#f15c41);
+    z-index: 2; 
+
+    margin-left: 15px; 
+    margin-top: -20px;  
+}
+
+.save-password-btn:hover {
+    background-image: linear-gradient(to right,#f163b1,#ff6b51);
+    color: white;
+}
+
+.content-container {
+    width: 50%;
+    min-width: 500px;
+    margin: 0 auto;
+
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px ;
+}
+.options-container { /*whole class for slider and checkboxes*/
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+
+input[type="range"] {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none; /* Remove default styling */
+    width: 100%; /* Make the range input fill the width of its container */
+    height: 8px; /* Height of the track */
+    border-radius: 500px; /* Rounded edges */
+    cursor: pointer; /* Change cursor to pointer */
+    margin: 0 10px; /* Adjust spacing as needed */
+    background: linear-gradient(to right, #e052a0 0%, #e052a0 var(--value), white var(--value), white 100%); /* Initial background with gradient */
+}
+
+/* Track styling */
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 8px; /* Height of the track */
+    border-radius: 500px; /* Rounded edges */
+    background: transparent; /* Set transparent for track */
+}
+
+input[type="range"]::-moz-range-track {
+    height: 8px; /* Height of the track */
+    border-radius: 500px; /* Rounded edges */
+    background: transparent; /* Set transparent for track */
+}
+
+/* Thumb styling */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none; /* Remove default styling */
+    width: 20px; /* Width of the thumb */
+    height: 20px; /* Height of the thumb */
+    border-radius: 50%; /* Rounded edges */
+    background-image: linear-gradient(to right, #e052a0, #f15c41); /* Match button gradient */
+    cursor: pointer; /* Change cursor to pointer */
+    margin-top: -6px; /* Center the thumb on the track */
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px; /* Width of the thumb */
+    height: 20px; /* Height of the thumb */
+    border-radius: 50%; /* Rounded edges */
+    background-image: linear-gradient(to right, #e052a0, #f15c41); /* Match button gradient */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Adding hover effect on thumb (WebKit) */
+input[type="range"]::-webkit-slider-thumb:hover {
+    background-image: linear-gradient(to right, #f163b1, #ff6b51); /* Change thumb gradient on hover */
+}
+
+/* Adding hover effect on thumb (Mozilla) */
+input[type="range"]::-moz-range-thumb:hover {
+    background-image: linear-gradient(to right, #f163b1, #ff6b51); /* Change thumb gradient on hover */
+}
+
+/* Adding focus effect */
+input[type="range"]:focus {
+    outline: none; /* Remove outline */
+}
+
