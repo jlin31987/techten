@@ -34,13 +34,60 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save_password']) && $l
 <body>
     <header class="header">
         Password Generator
+        <div class="login-link">
+            <?php if ($loggedIn): ?>
+                <span id="userName"><?= htmlspecialchars($userName) ?></span> 
+                <a href="logout.php" id="logoutLink" style="margin-left: 20px;">Logout</a> 
+            <?php else: ?>
+                <a href="login.html" id="loginLink">Sign In</a> 
+            <?php endif; ?>
+        </div>
     </header>
 
+    <nav class="navbar">
+            <ul>
+                <li><a href="saved_password.php" style="color: #001233; text-decoration: none;">Saved Passwords</a></li>
+                <li class="underline">Password Generator</li>
+            </ul>
+        </nav>
+    
     <div class="content-container">
         <div class="password-generator">
-            <input type="text" id="generatedPassword" placeholder="Generated Password">
-            <button id="generateBtn">Generate</button>
+            <div class="input-container">
+                <input type="text" id="generatedPassword" placeholder="Enter or generate password" class="styled-input">  
+                <button id="copyBtn">Copy</button>  
+            </div>
+            
+            <div class=options-container>
+                <div class="slider-container">
+                    <input type="range" id="passwordLength" min="6" max="32" value="12">
+                    <span id="lengthDisplay">Length: 12</span>
+                </div>
+            
+                <div class="checkboxes">
+                    <label><input type="checkbox" id="includeUppercase"> Uppercase</label>
+                    <label><input type="checkbox" id="includeLowercase"> Lowercase</label>
+                    <label><input type="checkbox" id="includeNumbers"> Number</label>
+                    <label><input type="checkbox" id="includeSymbols"> Symbol</label>
+                </div>
+            </div>
+
+        
+            <div class="buttons">
+                <button id="generateBtn" class="styled-button">Generate</button>
+            </div>
+
+            <?php if ($loggedIn): ?>
+    <div id="saveForm" class="rounded-box">
+        <form method="post" action="home.php">
+            <div class="input-container">
+                <input type="text" id="website" name="website" placeholder="Enter website name" required class="styled-input">
+                <input type="hidden" id="password" name="password">
+                <button type="submit" name="save_password" class="styled-button save-password-btn">Save Password</button>
+
+            </div>
+        </form>
+    </div>
+<?php endif; ?>
         </div>
     </div>
-</body>
-</html>
