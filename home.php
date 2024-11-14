@@ -91,3 +91,83 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save_password']) && $l
 <?php endif; ?>
         </div>
     </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const passwordInput = document.getElementById("generatedPassword");
+        const passwordField = document.getElementById("password");  
+        const lengthSlider = document.getElementById("passwordLength");
+        const lengthDisplay = document.getElementById("lengthDisplay");
+        const generateBtn = document.getElementById("generateBtn");
+        const copyBtn = document.getElementById("copyBtn");
+
+        // Function to update the slider's background
+        function updateSliderBackground() {
+            const value = (lengthSlider.value - lengthSlider.min) / (lengthSlider.max - lengthSlider.min) * 100; // Calculate percentage
+            lengthSlider.style.setProperty('--value', value + '%'); // Update the CSS variable
+            lengthDisplay.textContent = `Length: ${lengthSlider.value}`; // Update display text
+        }
+
+        // Event listener for length slider input
+        lengthSlider.addEventListener("input", updateSliderBackground);
+
+        // Initial call to set the slider background and display
+        updateSliderBackground();
+
+        generateBtn.addEventListener("click", () => {
+            const length = lengthSlider.value;
+            const uppercase = document.getElementById("includeUppercase").checked;
+            const lowercase = document.getElementById("includeLowercase").checked;
+            const numbers = document.getElementById("includeNumbers").checked;
+            const symbols = document.getElementById("includeSymbols").checked;
+
+            generatePassword(length, uppercase, lowercase, numbers, symbols);
+        });
+
+        function generatePassword(length, uppercase, lowercase, numbers, symbols) {
+            const queryString = `length=${length}&uppercase=${uppercase}&lowercase=${lowercase}&numbers=${numbers}&symbols=${symbols}`;
+
+            fetch(`generate_password.php?${queryString}`, {
+                method: 'GET',
+            })
+            .then(response => response.json())
+            .then(data => {
+                passwordInput.value = data.password;
+                passwordField.value = data.password; 
+            })
+            .catch(error => {
+                console.error('Error fetching password:', error);
+            });
+        }
+
+        copyBtn.addEventListener("click", () => {
+            if (passwordInput.value === "") {
+                alert("Nothing to copy! Please generate or enter a password first.");
+                return;
+            }
+
+            navigator.clipboard.writeText(passwordInput.value)
+                .then(() => {
+                    showCopySuccess();
+                })
+                .catch(err => {
+                    console.error("Failed to copy password: ", err);
+                });
+        });
+
+        function showCopySuccess() {
+            copyBtn.textContent = "✔";
+            copyBtn.style.backgroundImage = "linear-gradient(to right,#3adc42, #5bc247)";
+
+            setTimeout(() => {
+                copyBtn.textContent = "Copy";
+                copyBtn.style.backgroundImage = "linear-gradient(to right, #e052a0, #f15c41)";
+            }, 2000);
+        }
+
+        // Initial background update for slider
+        updateSliderBackground();
+    });
+    </script>
+</body>
+</html>
