@@ -6,11 +6,11 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #dae3e5;
+    background-color: #ffffff;
 }
 
 .header {
-    background-color: #001233;
+    background-image: linear-gradient(to right,#ff38a5,#ff4828);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -403,7 +403,7 @@ tbody td button.copy-btn:hover {
     z-index: 2; 
 
     margin-left: 15px; 
-    margin-top: -20px;  
+    margin-top: -20px;
 }
 
 .save-password-btn:hover {
