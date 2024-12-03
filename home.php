@@ -2,20 +2,27 @@
 session_start();
 include 'config.php'; 
 
+// Check if user is logged in and retrieve session variables
 $loggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 $userName = isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest';  
 
+// Handle POST request to save password if user is logged in
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save_password']) && $loggedIn) {
+    // Retrieve website and password from form
     $website = $_POST['website'];
     $password = $_POST['password'];
 
+    // Query to insert password details into database
     $stmt = $conn->prepare("INSERT INTO saved_passwords (user_id, website, password) VALUES (?, ?, ?)");
     $stmt->bind_param("iss", $user_id, $website, $password);
 
+    // Execute query
     if ($stmt->execute()) {
+        // Alert user if password was saved
         echo "<script>alert('Password saved successfully!');</script>";
     } else {
+        // Alert user is password was not saved
         echo "<script>alert('Failed to save password.');</script>";
     }
 
